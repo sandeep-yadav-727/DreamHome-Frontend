@@ -1,0 +1,41 @@
+.container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f7f7f7;
+  }
+  
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .message {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .suggestion {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .homeLink {
+    text-decoration: none;
+    color: #1e90ff;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .imageContainer {
+    margin-top: 30px;
+  }
+  
+  .image {
+    max-width: 30%;
+    height: auto;
+    border-radius: 8px;
+  }
+  

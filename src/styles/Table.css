@@ -1,0 +1,333 @@
+/* === Base Table Wrapper === */
+.table-wrapper {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    min-height: 300px;
+}
+
+/* === Scrollable Table Area === */
+.table-main {
+    min-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-radius: 15px;
+}
+
+/* === Table Structure === */
+.table-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--text-light);
+    border-radius: 15px;
+    table-layout: auto; 
+}
+
+.table-th,
+.table-td {
+    position: relative;
+    white-space: nowrap;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    cursor: pointer;
+}
+
+.table-th {
+    background-color: #6c63ff;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: initial;
+    min-width: max-content;
+}
+
+.table-td {
+    font-size: 12px;
+    padding: 5px;
+    text-align: left;
+    white-space: normal;        
+    word-break: break-word;    
+    overflow-wrap: break-word;  
+    text-overflow: initial;
+}
+
+/* === Action Buttons Cell === */
+.actions-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to new lines if needed */
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center;
+    padding: 8px;
+    overflow: visible;
+    min-width: 100px;
+}
+
+/* === Action Button Style === */
+.actions-buttons .action-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    background-color: #6c63ff;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    /* Ensures exactly 7 buttons fit in one line */
+    flex: 0 0 calc((100% - 60px) / 7);
+    max-width: calc((100% - 60px) / 7);
+    width: calc((100% - 60px) / 7);
+}
+
+/* === Hover and Focus Effects for Action Button === */
+.actions-buttons .action-button:hover,
+.actions-buttons .action-button:focus {
+    background-color: #4e3dff;
+    border-color: #fff;
+    transform: translateY(-3px); /* Slightly lift the button on hover */
+}
+
+/* === Action Button Disabled State === */
+.actions-buttons .action-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* === Row Styling === */
+.table-tr.even {
+    background-color: #f9f9ff;
+}
+
+.table-tr:hover {
+    background-color: #eef0ff;
+}
+
+.table-th.sorting-ascending::after {
+    content: " ↑";
+}
+
+.table-th.sorting-descending::after {
+    content: " ↓";
+}
+
+.table-th span {
+    margin-left: 8px;
+    font-size: 10px;
+}
+
+.table-th:last-child,
+.table-td:last-child {
+    border-right: none;
+}
+
+/* === Header Layout === */
+.header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    white-space: nowrap;
+    width: 100%; 
+    gap: 6px;
+}
+
+/* === Header Left Section === */
+.header-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-left .header-text {
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* === Header Right Section === */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+/* === Resize Handle === */
+.resize-handle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    cursor: col-resize;
+}
+
+/* === Filter Icon === */
+.filter-list {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    z-index: 10;
+}
+
+.filter-list:hover {
+    color: #dcdcff;
+}
+
+/* === Filter Dropdown === */
+.filter-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    border-radius: 6px;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+}
+
+.filter-dropdown.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0s ease 0s;
+}
+
+.filter-dropdown input,
+.filter-dropdown select {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.filter-dropdown input[type='text'],
+.filter-dropdown select {
+    padding: 8px;
+    font-size: 12px;
+}
+
+.filter-dropdown input::placeholder {
+    color: #aaa;
+}
+
+/* === Filter Applied Indicator === */
+.filter-applied-dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(105, 198, 105);
+    border-radius: 50%;
+    position: absolute;
+    right: 8px;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+/* === Pagination === */
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.pagination-button {
+    background-color: transparent;
+    color: rgb(118, 117, 117);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination-button:disabled {
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+/* === Records Per Page === */
+.records-per-page {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.records-per-page label {
+    margin: 0 8px;
+}
+
+.records-per-page select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        justify-content: flex-start;
+        margin-top: 6px;
+        width: 100%;
+    }
+
+    .filter-dropdown {
+        width: 100%;
+        left: 0;
+    }
+
+    .actions-buttons {
+        justify-content: flex-start; /* Align buttons to the left */
+    }
+
+    .actions-buttons .action-button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        flex-basis: 25%; /* Allow more buttons per row on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .table-th,
+    .table-td {
+        padding: 12px;
+    }
+
+    .filter-list {
+        font-size: 16px;
+    }
+
+    .actions-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
