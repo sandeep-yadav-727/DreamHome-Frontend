@@ -1,4 +1,4 @@
-import '../styles/Footer.css'; // Make sure this path matches your structure
+import '../styles/footer.css'; // Make sure this path matches your structure
 
 const Footer = () => {
     return (
