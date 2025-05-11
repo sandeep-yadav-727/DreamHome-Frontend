@@ -11,13 +11,7 @@ import Navbar from '../components/Navbar';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { UrlBackend } from '../utils/config';
-<<<<<<< HEAD
 import Footer from '../components/Footer';
-=======
-import Footer from './footer';
-
->>>>>>> 60f839fd25aef1ff9db6f5ceaacc11a9a7911a96
-
 const Home = () => {
   const [properties, setProperties] = useState([]);
 
