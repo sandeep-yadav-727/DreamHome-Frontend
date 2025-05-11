@@ -10,8 +10,9 @@ import realEstateImg4 from '../assets/img3.jpg'; // same as img3 intentionally?
 import Navbar from '../components/Navbar';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Footer from './footer';
 import { UrlBackend } from '../utils/config';
+import Footer from './footer';
+
 
 const Home = () => {
   const [properties, setProperties] = useState([]);
